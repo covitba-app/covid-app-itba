@@ -1,53 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
+import 'widgets/LateralMenu.dart';
 
 void main() {
   runApp(MyApp());
-}
-
-class LateralMenu extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Drawer(
-      // Add a ListView to the drawer. This ensures the user can scroll
-      // through the options in the drawer if there isn't enough vertical
-      // space to fit everything.
-      child: ListView(
-        // Important: Remove any padding from the ListView.
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-              accountEmail: Text("johndoe@somemail.com"),
-              accountName: Text("John Doe"),
-              arrowColor: Colors.white,
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.blue[900],
-                child: Text("JD"),
-              ),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 28, 28, 30),
-              )),
-          ListTile(
-              title: Text("Function 1"),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-                // Then close the drawer.
-                Navigator.pop(context);
-              }),
-          ListTile(
-              title: Text("Function 2"),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-                // Then close the drawer.
-                Navigator.pop(context);
-              })
-        ],
-      ),
-    );
-  }
 }
 
 class MyApp extends StatelessWidget {
