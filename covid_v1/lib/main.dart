@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
+import 'models/Interaction.dart';
 import 'widgets/LateralMenu.dart';
 import 'widgets/buildItem.dart';
+import 'widgets/new_interaction.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-// // Esta funcion se activa al pulsar los botones + (para crear una nueva trans)
-// void _startAddNewTransaction(BuildContext ctx) {
-//   showModalBottomSheet(
-//       context: ctx,
-//       builder: (_) {
-//         //retorna la clase (widget en realidad) New transaction del archivo
-//         // transaction_list, y le pasa puntero a la funcion _addNewTransaction
-//         //return NewTransaction(_addNewTransaction);
-//         return;
-//       });
-// }
+//List of interactions made by the user
+final List<Interaction> _userInteractions = [];
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -51,9 +44,32 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+// This function is activated by pressing the + buttons (to create a new interaction)
+
 class _MyHomePageState extends State<MyHomePage> {
   var _counter = 0;
   var _numOfBubles = 20;
+
+  void _startAddNewInteraction(BuildContext ctx) {
+    showModalBottomSheet(
+        context: ctx,
+        builder: (_) {
+          return NewInteraction(_addNewInteraction);
+        });
+  }
+
+  void _addNewInteraction(
+      String intTitle, double intRisk, DateTime chosenDate) {
+    final newInt = Interaction(
+      title: intTitle,
+      risk: intRisk,
+      date: chosenDate,
+      id: DateTime.now().toString(),
+    );
+    setState(() {
+      _userInteractions.add(newInt);
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -146,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => {},
+        onPressed: () => _startAddNewInteraction(context),
         label: Text('Add Interaction'),
         icon: Icon(Icons.add),
       ),
