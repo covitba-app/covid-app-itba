@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               percent: 0.65,
               center: Text(
                 "65%\nExposure",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0),
                 textAlign: TextAlign.center,
               ),
               circularStrokeCap: CircularStrokeCap.butt,
