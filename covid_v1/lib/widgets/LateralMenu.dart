@@ -20,7 +20,7 @@ class LateralMenu extends StatelessWidget {
                 child: Text("JD"),
               ),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 28, 28, 30),
+                color: Theme.of(context).backgroundColor,
               )),
           ListTile(
               title: Text("Function 1"),

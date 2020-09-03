@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'COVITBA',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        backgroundColor: Color.fromARGB(255, 28, 28, 30),
         accentColor: Colors.greenAccent,
         errorColor: Colors.blueGrey[800],
         fontFamily: 'Quicksand',
@@ -86,15 +87,15 @@ class _MyHomePageState extends State<MyHomePage> {
               animation: true,
               animationDuration: 1200,
               lineWidth: 15.0,
-              percent: 0.8,
+              percent: 0.65,
               center: Text(
-                "High Exposure",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                "65%\nExposure",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35.0),
                 textAlign: TextAlign.center,
               ),
               circularStrokeCap: CircularStrokeCap.butt,
               backgroundColor: Colors.grey,
-              progressColor: Color.fromARGB(255, 150, 2, 10),
+              progressColor: Theme.of(context).primaryColor,
             ),
             SafeArea(
               child: Center(
