@@ -34,6 +34,8 @@ dev_dependencies:
 
   flutter_test:
     sdk: flutter
+  percent_indicator: "^2.1.5"
+  circle_wheel_scroll: ^0.0.1+1
 
 
 flutter_icons:
