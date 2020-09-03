@@ -51,24 +51,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //This variable is for responsive layouts
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
+    final appBar = AppBar(
+      // Here we take the value from the MyHomePage object that was created by
+      // the App.build method, and use it to set our appbar title.
+      title: Text(widget.title),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+        bottom: Radius.circular(30),
+      )),
+      centerTitle: true,
+    );
+
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(30),
-        )),
-        centerTitle: true,
-      ),
+      appBar: appBar,
       drawer: LateralMenu(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircularPercentIndicator(
-              radius: 200.0,
+              radius: (MediaQuery.of(context).size.height -
+                      appBar.preferredSize.height -
+                      MediaQuery.of(context).padding.top) *
+                  0.3,
               animation: true,
               animationDuration: 1200,
               lineWidth: 15.0,
@@ -95,11 +104,20 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.grey,
               progressColor: Theme.of(context).primaryColor,
             ),
+            SizedBox(
+              height: (MediaQuery.of(context).size.height -
+                      appBar.preferredSize.height -
+                      MediaQuery.of(context).padding.top) *
+                  0.15,
+            ),
             SafeArea(
               child: Center(
                 child: Container(
-                  height: 484,
-                  width: 350,
+                  height: (MediaQuery.of(context).size.height -
+                          appBar.preferredSize.height -
+                          MediaQuery.of(context).padding.top) *
+                      0.5,
+                  width: MediaQuery.of(context).size.width,
                   child: CircleListScrollView(
                     physics: CircleFixedExtentScrollPhysics(),
                     axis: Axis.horizontal,

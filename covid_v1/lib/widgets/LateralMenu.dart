@@ -5,10 +5,8 @@ class LateralMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Drawer(
       // Add a ListView to the drawer. This ensures the user can scroll
-      // through the options in the drawer if there isn't enough vertical
-      // space to fit everything.
+      // through the options in the drawer if there isn't enough vertical space
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
@@ -25,17 +23,11 @@ class LateralMenu extends StatelessWidget {
           ListTile(
               title: Text("Function 1"),
               onTap: () {
-                // Update the state of the app.
-                // ...
-                // Then close the drawer.
                 Navigator.pop(context);
               }),
           ListTile(
               title: Text("Function 2"),
               onTap: () {
-                // Update the state of the app.
-                // ...
-                // Then close the drawer.
                 Navigator.pop(context);
               })
         ],
