@@ -63,8 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: LateralMenu(),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
@@ -88,11 +86,24 @@ class _MyHomePageState extends State<MyHomePage> {
               animationDuration: 1200,
               lineWidth: 15.0,
               percent: 0.65,
-              center: Text(
-                "65%\nExposure",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0),
-                textAlign: TextAlign.center,
-              ),
+              center: Wrap(children: <Widget>[
+                Column(
+                  children: [
+                    Text(
+                      "65%",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 40.0),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "Exposure",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                )
+              ]),
               circularStrokeCap: CircularStrokeCap.butt,
               backgroundColor: Colors.grey,
               progressColor: Theme.of(context).primaryColor,
