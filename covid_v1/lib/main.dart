@@ -34,7 +34,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  var _counter = 0;
+  var _numOfBubles = 20;
 
   void _incrementCounter() {
     setState(() {
@@ -149,7 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     physics: CircleFixedExtentScrollPhysics(),
                     axis: Axis.horizontal,
                     itemExtent: 80,
-                    children: List.generate(20, _buildItem),
+                    children: List.generate(
+                        _numOfBubles, (i) => _buildItem(i, _numOfBubles)),
                     radius: MediaQuery.of(context).size.width * 0.4,
                   ),
                 ),
@@ -161,14 +163,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildItem(int i) {
+  Widget _buildItem(int i, int total) {
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
         child: Container(
           width: 80,
           padding: EdgeInsets.all(20),
-          color: Colors.blue[100 * ((i % 8) + 1)],
+          color: Theme.of(context)
+              .primaryColor
+              .withAlpha((255 / total).truncate().toInt() * (i % total)),
           child: Center(
             child: Text(
               i.toString(),
