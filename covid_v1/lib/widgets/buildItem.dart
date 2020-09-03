@@ -13,9 +13,8 @@ class BuildItem extends StatelessWidget {
         child: Container(
           width: 80,
           padding: EdgeInsets.all(20),
-          color: Theme.of(context)
-              .primaryColor
-              .withAlpha((255 / total).truncate().toInt() * (i % total)),
+          color: Theme.of(context).primaryColor.withAlpha(
+              (255 / total).truncate().toInt() * (total - i % total)),
           child: Center(
             child: Text(
               i.toString(),

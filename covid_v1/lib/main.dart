@@ -8,6 +8,18 @@ void main() {
   runApp(MyApp());
 }
 
+// // Esta funcion se activa al pulsar los botones + (para crear una nueva trans)
+// void _startAddNewTransaction(BuildContext ctx) {
+//   showModalBottomSheet(
+//       context: ctx,
+//       builder: (_) {
+//         //retorna la clase (widget en realidad) New transaction del archivo
+//         // transaction_list, y le pasa puntero a la funcion _addNewTransaction
+//         //return NewTransaction(_addNewTransaction);
+//         return;
+//       });
+// }
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -131,6 +143,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => {},
+        label: Text('Add Interaction'),
+        icon: Icon(Icons.add),
       ),
     );
   }
