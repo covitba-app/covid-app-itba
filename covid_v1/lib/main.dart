@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
-import 'models/Interaction.dart';
+import 'models/interaction.dart';
 import 'widgets/drawer.dart';
-import 'widgets/buildItem.dart';
+import 'widgets/build_item.dart';
 import 'widgets/new_interaction.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 28, 28, 30),
         accentColor: Colors.greenAccent,
         errorColor: Colors.blueGrey[800],
-        fontFamily: 'Quicksand',
+        // fontFamily: 'Quicksand',
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
           color: Color.fromARGB(255, 28, 28, 30),
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: appBar,
-      drawer: Drawer(),
+      drawer: CovDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
