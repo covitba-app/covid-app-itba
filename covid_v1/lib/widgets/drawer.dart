@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LateralMenu extends StatelessWidget {
+class CovDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Drawer(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
 import 'models/Interaction.dart';
-import 'widgets/LateralMenu.dart';
+import 'widgets/drawer.dart';
 import 'widgets/buildItem.dart';
 import 'widgets/new_interaction.dart';
 
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: appBar,
-      drawer: LateralMenu(),
+      drawer: Drawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
