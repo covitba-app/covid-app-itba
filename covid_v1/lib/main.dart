@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 28, 28, 30),
         accentColor: Colors.greenAccent,
         errorColor: Colors.blueGrey[800],
-        // fontFamily: 'Quicksand',
+        fontFamily: 'Quicksand',
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
           color: Color.fromARGB(255, 28, 28, 30),
@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //This variable is for responsive layouts
+    //This variable is for responsive layouts (we can show diferents aspects
+    //with this variable)
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
