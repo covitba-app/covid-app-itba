@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //This variable is for responsive layouts
+    //This variable is for responsive layouts (we can show diferents aspects
+    //with this variable)
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
